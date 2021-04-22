@@ -8,6 +8,9 @@
     "build": "cross-env NODE_ENV=production node_modules/webpack/bin/webpack.js --config=node_modules/laravel-mix/setup/webpack.config.js",
     "watch": "npm run dev -- --watch"
   },
+  "engines": {
+    "node": ">=6.0.0"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/ministryofjustice/technology-diversity-statistics.git"
@@ -19,19 +22,20 @@
   },
   "homepage": "https://ministryofjustice.github.io/technology-diversity-statistics/",
   "devDependencies": {
-    "chokidar": "^3.5.1",
     "cross-env": "^7.0",
     "govuk-frontend": "^3.11.0",
+    "is-svg": ">=4.2.2",
     "laravel-mix": "^6.0.13",
     "nunjucks": "^3.2.3",
+    "postcss": "^8.2.10",
     "resolve-url-loader": "^3.1.2",
     "sass": "^1.32.8",
     "sass-loader": "^11.0.1",
     "vue": "^2.6.12",
-    "vue-template-compiler": "^2.6.12",
-    "is-svg": ">=4.2.2"
+    "vue-template-compiler": "^2.6.12"
   },
   "dependencies": {
+    "chroma-js": "^2.1.1",
     "highcharts": "^9.0.1"
   }
 }

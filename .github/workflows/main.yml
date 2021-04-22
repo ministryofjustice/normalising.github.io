@@ -3,7 +3,7 @@
 
 name: CI Deploy Page
 on:
-  # Trigger on push or pull request events but only for the main branch
+  # Trigger on push events but only for the main branch
   push:
     branches: [ main ]
 jobs:
