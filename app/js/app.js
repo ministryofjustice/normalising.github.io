@@ -1,4 +1,8 @@
-;(function() {
+// init default
+MOJDI = {};
+/*
+
+(function() {
   'use strict'
 
   var Graph = {
@@ -84,4 +88,7 @@
   };
 
   Graph.init();
-})()
+})();
+
+
+*/
