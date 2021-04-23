@@ -2,6 +2,7 @@ const Highcharts = require('highcharts');
 require('highcharts/modules/accessibility')(Highcharts);
 require('highcharts/modules/data')(Highcharts);
 require('highcharts/modules/exporting')(Highcharts);
+require('highcharts/modules/item-series')(Highcharts);
 
 /**
  * functional imports
@@ -63,8 +64,11 @@ ChartColours(Highcharts, [
 Highcharts.chart(Options(faith));
 
 ChartColours(Highcharts, [
+    Get('jade'),
+    Get('cobalt'),
+    Get('apple'),
+    Get('teal'),
     Get('magenta'),
-    Get('blue'),
-    Get('grey')
+    Get('blue')
 ]);
 Highcharts.chart(Options(age));

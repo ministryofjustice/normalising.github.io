@@ -19,7 +19,7 @@ _mix.sass('app/sass/app.scss', publicPath + 'css/')
     ], publicPath + 'js/')
     .copy('index.html', publicPath + 'index.html')
     .copy('README.ghp.md', publicPath + 'README.md')
-    .copy('node_modules/govuk-frontend/govuk/assets', publicPath + 'assets/')
+    .copy('node_modules/govuk-frontend/govuk/assets/images', publicPath + 'assets/images')
     .options({
         processCssUrls: false
     }).sourceMaps();
