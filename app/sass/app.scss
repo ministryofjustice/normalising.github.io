@@ -16,6 +16,7 @@ $govuk-font-family: 'PT Sans', "sans-serif";
 @import "node_modules/govuk-frontend/govuk/components/header/index";
 @import "node_modules/govuk-frontend/govuk/components/skip-link/index";
 @import "node_modules/govuk-frontend/govuk/utilities/all";
+@import "node_modules/govuk-frontend/govuk/overrides/all";
 
 
 @import "dt-colours";
