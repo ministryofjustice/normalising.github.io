@@ -8,6 +8,9 @@
 @import "node_modules/govuk-frontend/govuk/utilities/all";
 @import "node_modules/govuk-frontend/govuk/overrides/all";
 
+@import url('https://fonts.googleapis.com/css2?family=PT+Sans:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
+
 @import "dt-colours";
 @import "loader";
 @import "charts";
@@ -30,8 +33,15 @@ $base_root : '/technology-diversity-statistics/assets/';
     font-display: fallback;
 }
 
-main p {
-    @extend .govuk-body
+h1, h2, h3, h4, h5, h6, {
+    &[class^="govuk-heading-"] {
+        font-family: 'PT Sans', sans-serif;
+    }
+}
+
+.govuk-body, main p {
+    font-family: 'PT Sans', sans-serif;
+    @extend .govuk-body;
 }
 .govuk-header__container {
     margin-bottom: 0;
