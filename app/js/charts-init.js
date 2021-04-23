@@ -1,20 +1,6 @@
-MOJDI = MOJDI || {};
-
 //init
+MOJDI = MOJDI || {};
 MOJDI.charts = {};
-
-// default label settings for column charts
-MOJDI.charts.dataLabel = {
-    enabled: true,
-    formatter: function () {
-        return (this.y > 0 ? this.y + '%' : null);
-    },
-    style: {
-        textOutline: 'none',
-        fontSize: 14,
-        fontWeight: 'normal'
-    }
-};
 
 // global chart options
 MOJDI.charts.default = {
@@ -44,11 +30,9 @@ MOJDI.charts.default = {
         margin: 20,
         align: 'left'
     },
-    plotOptions: {
-        series: { stacking: 'percent' }
-    },
     subtitle: {
         style: {
+            fontFamily: "Open Sans",
             fontStyle: "normal",
             fontWeight: "normal",
             fontSize: "17px",
@@ -58,6 +42,9 @@ MOJDI.charts.default = {
         },
         widthAdjust: +60,
         align: "left"
+    },
+    plotOptions: {
+        series: { stacking: 'percent' }
     },
     xAxis: {
         labels: {
@@ -94,10 +81,28 @@ MOJDI.charts.default = {
     }
 };
 
+// default label settings for column charts
+MOJDI.charts.dataLabel = {
+    enabled: true,
+    formatter: function () {
+        return (this.y > 0 ? this.y + '%' : null);
+    },
+    style: {
+        textOutline: 'none',
+        fontSize: 14,
+        fontWeight: 'normal'
+    }
+};
+
+/**
+ * Recursively merge an infinite number of objects, from right to left.
+ *
+ * @param options
+ * @returns {{}}
+ */
 MOJDI.charts.merge = (...options) => {
     let chartOptions = {};
 
-    // Merge chart objects
     let merger = (obj) => {
         for (let prop in obj) {
             if (obj.hasOwnProperty(prop)) {
@@ -120,6 +125,20 @@ MOJDI.charts.merge = (...options) => {
     return chartOptions;
 };
 
+/**
+ * Helper function to merge unique chart options into
+ * our default global charts object.
+ *
+ * Order of merge arguments is important: objects imported from
+ * the right will retain their values by overwriting existing
+ * property values in objects to the left in, the argument list.
+ *
+ * @example MOJDI.charts.merge(MOJDI.charts.default, options);
+ *
+ * @param options
+ * @returns {{}}
+ * @constructor
+ */
 MOJDI.charts.Options = (options) => MOJDI.charts.merge(MOJDI.charts.default, options);
 
 module.exports = MOJDI.charts;
